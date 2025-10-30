@@ -20,7 +20,7 @@ public class SetDnsClientRmi implements Runnable{
 
             service = (DnsService) registry.lookup("DnsService");
 
-            service.setIpAddr(this.addr, this.domain);
+            service.setIpAddr(this.domain, this.addr);
         } catch (Exception e ) {
             e.printStackTrace();
         }

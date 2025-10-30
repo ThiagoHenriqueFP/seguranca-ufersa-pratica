@@ -1,7 +1,12 @@
 package dns;
 
-public interface DnsService {
-    String getIpAddr(String url);
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 
-    void setIpAddr(String url, String ipAddr);
+public interface DnsService extends Remote {
+    String getIpAddr(String url) throws RemoteException;
+
+    void setIpAddr(String url, String ipAddr) throws RemoteException;
+
+    void removeIpAddr(String url) throws RemoteException;
 }
